@@ -1,0 +1,11 @@
+variables:
+  JEKYLL_ENV: production
+
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+    - bundle install
+    - npm install

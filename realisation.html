@@ -1,0 +1,49 @@
+---
+layout: page
+---
+<style>
+    iframe {
+        width: 100%;
+        height: 300px;
+    }
+
+    .video-item {
+        padding-top: 8rem;
+    }
+
+    .video-item.first {
+        padding-top: 0;
+    }
+
+    .video-item h3 {
+        margin-top: 0;
+    }
+</style>
+<section class="module">
+    <div class="container">
+        {% for video in site.data.realisation %}
+        {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+        {% if thecycle == 'odd' %}
+        <div class="row multi-columns-row video-item {% if forloop.first %}first {% endif %}">
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <iframe src="https://player.vimeo.com/video/{{ video.id }}?title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <h3>{{ video.titre }}</h3>
+                {{ video.description | markdownify }}
+            </div>
+        </div>
+        {% else %}
+        <div class="row multi-columns-row video-item">
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <h3>{{ video.titre }}</h3>
+                {{ video.description | markdownify }}
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <iframe src="https://player.vimeo.com/video/{{ video.id }}?title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</section>

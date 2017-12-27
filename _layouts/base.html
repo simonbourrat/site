@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ page.title }}</title>
+    <meta name="description" content="Simon Bourrat, Télépilote Cadreur Drone">
+
+    <link rel="icon" href="favicon.ico">
+    {% include stylesheets.html %}
+    <!-- build:inlinecss -->
+    <link href="assets/main.css" rel="stylesheet">
+    <!-- endbuild -->
+</head>
+<body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+<main>
+    <div class="page-loader">
+        <div class="loader">Chargement ...</div>
+    </div>
+    {% unless page.hidenav == true %}
+    <nav class="navbar navbar-custom navbar-fixed-top {{ navbar-additional-classes }}">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span
+                        class="sr-only">Afficher/masquer menu</span><span class="icon-bar"></span><span
+                        class="icon-bar"></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand" href="index.html">
+                        <h1>Simon Bourrat<h1>
+                        <h2>Télépilote Cadreur Drone</h2>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="custom-collapse">
+                {% include navlist.html %}
+            </div>
+        </div>
+    </nav>
+    {% endunless %}
+    {{content}}
+</main>
+{% include javascript.html %}
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-111654327-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+</body>
+</html>

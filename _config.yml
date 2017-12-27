@@ -1,0 +1,21 @@
+# Build settings
+markdown: kramdown
+theme: minima
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      title: "Simon Bourrat - Télépilote Cadreur Drone"
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+exclude:
+  - node_modules/
+  - psd/
+  - Gemfile
+  - Gemfile.lock
+  - gulpfile.js
+  - flightplan.js
