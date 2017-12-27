@@ -1,0 +1,49 @@
+---
+layout: page
+---
+<style>
+    .aspect-ratio {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 51%;
+    }
+    .aspect-ratio iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0; top: 0;
+    }
+</style>
+<section class="module-medium" id="services">
+    <div class="container" id="services-s">
+        <div class="row">
+            <div class="col-xs-12">
+            <h3>Photographie</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="post-masonry">
+                    {% for image in site.static_files %}
+                        {% if image.path contains 'images/gallery' %}
+                        <div class="col-xs-6 gallery-item">
+                            <div class="gallery-image"><a class="gallery" href="{{ site.baseurl }}{{ image.path }}" title="Title 8"><img src="{{ site.baseurl }}{{ image.path }}" />
+                                <div class="gallery-caption">
+                                    <div class="gallery-icon"><span class="icon-magnifying-glass"></span></div>
+                                </div></a></div>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="module-small bg-dark">
+    <div class="container">
+        <div class="row">
+
+        </div>
+    </div>
+</section>

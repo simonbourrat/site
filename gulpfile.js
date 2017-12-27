@@ -22,7 +22,7 @@ gulp.task('compress', function() {
 });
 
 gulp.task('fonts', function() {
-    return gulp.src('./assets/lib/**/*.+(woff|woff2|eot|svg|ttf)')
+    return gulp.src('./assets/lib/**/*.+{woff,woff2,eot,svg,ttf}')
         .pipe(flatten())
         .pipe(gulp.dest('./_site/fonts'));
 });
