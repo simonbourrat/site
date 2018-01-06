@@ -1,37 +1,51 @@
 ---
 layout: page
 ---
-<section class="module" id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6 col-sm-offset-3">
-                <h2 class="module-title font-alt">Contact</h2>
-                <div class="module-subtitle font-serif"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6 col-sm-offset-3">
-                <form name="contact" netlify-honeypot="phone" netlify>
-                    <div class="form-group">
-                        <label class="sr-only" for="name">Name</label>
-                        <input class="form-control" type="text" id="name" name="name" placeholder="Votre nom*" required="required" data-validation-required-message="Veuillez saisir votre nom."/>
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="form-group">
-                        <label class="sr-only" for="email">Email</label>
-                        <input class="form-control" type="email" id="email" name="email" placeholder="Votre email*" required="required" data-validation-required-message="Veuillez saisir votre adresse email."/>
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="form-group">
-                        <textarea class="form-control" rows="7" id="message" name="message" placeholder="Votre message*" required="required" data-validation-required-message="Veuillez saisir votre message."></textarea>
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="text-center">
-                        <button class="btn btn-block btn-round btn-d" id="cfsubmit" type="submit">Envoyer</button>
-                    </div>
-                </form>
-                <div class="ajax-response font-alt" id="contactFormResponse"></div>
-            </div>
-        </div>
+<section class="module home-section home-full-height bg-dark bg-gradient bg" id="contact"
+         data-background="assets/images/contact_bg.png">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <h2 class="module-title font-alt">Contact</h2>
+        <div class="module-subtitle font-serif"></div>
+      </div>
     </div>
+    <div class="row mb-20">
+      <div class="col-sm-6 col-sm-offset-3">
+        <div><span class="icon-envelope"></span> <a href="mailto:{{site.data.contact.email}}">{{site.data.contact.email}}</a></div>
+        <div><span class="icon-phone"></span> <a href="tel:{{site.data.contact.phone}}">{{site.data.contact.phone}}</a></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <form name="contact" netlify-honeypot="phone" netlify>
+          <div class="form-group">
+            <label class="sr-only" for="name">Name</label>
+            <input class="form-control" type="text" id="name" name="name" placeholder="Votre nom*"
+                   required="required"
+                   data-validation-required-message="Veuillez saisir votre nom."/>
+            <p class="help-block text-danger"></p>
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="email">Email</label>
+            <input class="form-control" type="email" id="email" name="email"
+                   placeholder="Votre email*" required="required"
+                   data-validation-required-message="Veuillez saisir votre adresse email."/>
+            <p class="help-block text-danger"></p>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" rows="7" id="message" name="message"
+                      placeholder="Votre message*" required="required"
+                      data-validation-required-message="Veuillez saisir votre message."></textarea>
+            <p class="help-block text-danger"></p>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-block btn-round btn-d" id="cfsubmit" type="submit">Envoyer
+            </button>
+          </div>
+        </form>
+        <div class="ajax-response font-alt" id="contactFormResponse"></div>
+      </div>
+    </div>
+  </div>
 </section>
