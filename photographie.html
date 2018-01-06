@@ -9,7 +9,7 @@ layout: page
                     {% for image in site.static_files %}
                         {% if image.path contains 'images/gallery' %}
                         <div class="col-xs-6 gallery-item">
-                            <div class="gallery-image"><a class="gallery" href="{{ site.baseurl }}{{ image.path }}" title="Title 8"><img src="{{ site.baseurl }}{{ image.path }}" />
+                            <div class="gallery-image"><a class="gallery" href="{{ site.baseurl }}{{ image.path }}"><img src="{{ site.baseurl }}/assets/images/thumb/{{ image.name }}" />
                                 <div class="gallery-caption">
                                     <div class="gallery-icon"><span class="icon-magnifying-glass"></span></div>
                                 </div></a></div>
