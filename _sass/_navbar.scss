@@ -39,7 +39,7 @@
 	letter-spacing: 4px;
 	font-weight: 400;
 	font-size: 22px;
-	color: $text-color;
+	color: $io-blue;
 
 	h1 {
 		line-height: 1;
@@ -56,7 +56,7 @@
 
 .navbar-custom .nav li > a {
 	position: relative;
-	color: $text-color;
+	color: $io-blue;
 }
 
 .navbar-custom .dropdown-menu > li > a {
@@ -89,7 +89,7 @@
 .navbar-custom .dropdown-menu > li > a:focus,
 .navbar-custom .dropdown-menu > li > a:hover {
 	background: none;
-	color: $lighter-text-color;
+	color: $io-blue;
 }
 
 .navbar-custom .dropdown-menu > li > a:hover {

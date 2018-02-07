@@ -234,7 +234,7 @@ a,
 .bg-dark-30 .alt-module-subtitle h5,
 .bg-dark-60 .alt-module-subtitle h5,
 .bg-dark-90 .alt-module-subtitle h5 {
-  color: #e8f1f5; }
+  color: #fffbf1; }
 
 .bg-dark {
   background: #262e32; }
@@ -590,6 +590,14 @@ a,
 .alert i {
   margin-right: 5px; }
 
+#contact a {
+  color: #fffbf1; }
+  #contact a:hover {
+    color: #fff4d8; }
+
+@media (min-width: 1200px) {
+  #contact .phone-number {
+    text-align: right; } }
 /*--------------------------------------------------------------
 	Buttons
 --------------------------------------------------------------*/
@@ -741,6 +749,7 @@ a,
   font-size: 11px;
   height: 33px;
   border: 1px solid #EAEAEA;
+  background-color: #fffbf1;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -1149,7 +1158,7 @@ General Styles - Owlcarousel
   letter-spacing: 4px;
   font-weight: 400;
   font-size: 22px;
-  color: #333333; }
+  color: #262e32; }
   .navbar-custom .navbar-brand h1 {
     line-height: 1;
     font-size: 2rem;
@@ -1161,7 +1170,7 @@ General Styles - Owlcarousel
 
 .navbar-custom .nav li > a {
   position: relative;
-  color: #333333; }
+  color: #262e32; }
 
 .navbar-custom .dropdown-menu > li > a {
   border-bottom: 1px solid rgba(73, 71, 71, 0.15) !important;
@@ -1190,7 +1199,7 @@ General Styles - Owlcarousel
 .navbar-custom .dropdown-menu > li > a:focus,
 .navbar-custom .dropdown-menu > li > a:hover {
   background: none;
-  color: #8c8c8c; }
+  color: #262e32; }
 
 .navbar-custom .dropdown-menu > li > a:hover {
   background: rgba(255, 255, 255, 0.1) !important; }

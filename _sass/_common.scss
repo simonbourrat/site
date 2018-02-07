@@ -272,7 +272,7 @@ a,
 .bg-dark-30 .alt-module-subtitle h5,
 .bg-dark-60 .alt-module-subtitle h5,
 .bg-dark-90 .alt-module-subtitle h5 {
-	color: $io-clear-blue;
+	color: $text-color;
 }
 
 .bg-dark {
@@ -519,4 +519,22 @@ a,
 
 .alert i {
 	margin-right: 5px;
+}
+
+#contact {
+	a {
+		color: $text-color;
+
+		&:hover {
+			color: darken($text-color, 5);
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	#contact {
+		.phone-number {
+			text-align: right;
+		}
+	}
 }

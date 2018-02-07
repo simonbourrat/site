@@ -7,13 +7,20 @@ layout: page
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3">
         <h2 class="module-title font-alt">Contact</h2>
-        <div class="module-subtitle font-serif"></div>
+        <div class="module-subtitle font-serif">
+            <blockquote>
+                <p style="margin-bottom: 0.3em;">« {{ site.data.contact.quote }} »</p>
+                <p style="text-align: right;"><cite>Mark Twain</cite></p></blockquote>
+
+        </div>
       </div>
     </div>
     <div class="row mb-20">
       <div class="col-sm-6 col-sm-offset-3 medium-text">
-        <div><span class="icon-envelope" style="width: 20px"></span> <a href="mailto:{{site.data.contact.email}}">{{site.data.contact.email}}</a></div>
-        <div><span class="icon-mobile" style="width: 20px"></span> <a href="tel:{{site.data.contact.phone}}">{{site.data.contact.phone}}</a></div>
+          <div class="row">
+            <div class="col-lg-6"><span class="icon-envelope" style="width: 20px"></span> <a href="mailto:{{site.data.contact.email}}">{{site.data.contact.email}}</a></div>
+            <div class="col-lg-6 phone-number"><span class="icon-mobile" style="width: 20px"></span> <a href="tel:{{site.data.contact.phone.number}}">{{site.data.contact.phone.display}}</a></div>
+          </div>
       </div>
     </div>
     <div class="row">
