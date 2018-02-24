@@ -2,11 +2,24 @@
 layout: page
 ---
 <style>
+    .aspect-ratio {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56%;
+    }
 
+    .aspect-ratio iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+    }
 </style>
-<section class="module-extra-small">
-    <div class="container">
-        {% for video in site.data.realisation %}
+<section class="module-extra-small" id="services">
+    <div class="container" id="services-s">
+        {% for video in site.data.drone %}
         {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
         {% if thecycle == 'odd' %}
         <div class="row multi-columns-row video-item {% if forloop.first %}first {% endif %} video-item--even">
