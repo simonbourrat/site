@@ -522,6 +522,7 @@ a,
 }
 
 #contact {
+	padding-top: 30px;
 	a {
 		color: $text-color;
 
@@ -544,12 +545,17 @@ iframe {
 	height: 215px;
 }
 
+.video-item {
+	display: flex;
+}
+
 .video-item.first {
 	padding-top: 0;
 }
 
 .video-item h3 {
 	margin-top: 0;
+	text-align: center;
 }
 
 @media (min-width: 576px) {
@@ -595,4 +601,11 @@ iframe {
 		display: flex;
 		flex-direction: column-reverse;
 	}
+}
+
+.video-item__info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
