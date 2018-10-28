@@ -40,6 +40,8 @@
 	font-weight: 400;
 	font-size: 22px;
 	color: $io-blue;
+	display: flex;
+	align-items: center;
 
 	h1 {
 		line-height: 1;
@@ -51,7 +53,12 @@
 		line-height: 1;
 		font-size: 0.5em;
 		margin-top: 0.5em;
+		margin-bottom: 0;
 	}
+}
+
+.navbar-custom .container {
+	margin-top: 0.5rem;
 }
 
 .navbar-custom .nav li > a {

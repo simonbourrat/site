@@ -1207,7 +1207,9 @@ General Styles - Owlcarousel
   letter-spacing: 4px;
   font-weight: 400;
   font-size: 22px;
-  color: #262e32; }
+  color: #262e32;
+  display: flex;
+  align-items: center; }
   .navbar-custom .navbar-brand h1 {
     line-height: 1;
     font-size: 2rem;
@@ -1215,7 +1217,11 @@ General Styles - Owlcarousel
   .navbar-custom .navbar-brand h2 {
     line-height: 1;
     font-size: 0.5em;
-    margin-top: 0.5em; }
+    margin-top: 0.5em;
+    margin-bottom: 0; }
+
+.navbar-custom .container {
+  margin-top: 0.5rem; }
 
 .navbar-custom .nav li > a {
   position: relative;
