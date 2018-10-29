@@ -6,15 +6,23 @@ layout: page
         <div class="row">
             <div class="col-xs-12">
                 <div class="post-masonry">
-                    {% for image in site.static_files %}
-                        {% if image.path contains 'images/gallery' %}
+                    {% assign files = site.static_files | sort: "path" %}
+                    {% for i in site.static_files %}
+                        {% if i.path contains 'images/gallery' %}
+                            {% assign p = i.path | split: '.' %}
+                            {% assign name = p[0] | split: '/' %}
+                            {% assign wrapped = name[4] | floor | compact %}
+                            {% assign b = b | concat: wrapped %}
+                        {% endif %}
+                    {% endfor %}
+                    {% assign imgs = b | sort %}
+                    {% for image in imgs %}
                         <div class="col-xs-6 gallery-item">
-                            <div class="gallery-image"><a class="gallery" href="{{ site.baseurl }}{{ image.path }}"><img src="{{ site.baseurl }}/assets/images/thumb/{{ image.name }}" />
+                            <div class="gallery-image"><a class="gallery" href="{{ site.baseurl }}/assets/images/gallery/{{ image }}.jpg"><img src="{{ site.baseurl }}/assets/images/thumb/{{ image }}.jpg" />
                                 <div class="gallery-caption">
                                     <div class="gallery-icon"><span class="icon-magnifying-glass"></span></div>
                                 </div></a></div>
                         </div>
-                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
