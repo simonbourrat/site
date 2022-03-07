@@ -4,4 +4,4 @@ _site
 *.iml
 .idea
 *.lock
-node_modules
+node_modules/
