@@ -7,7 +7,7 @@ defaults:
     scope:
       path: ""
     values:
-      title: "Simon Bourrat - Vidéaste - Pilote de Drone"
+      title: "Simon Bourrat"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
