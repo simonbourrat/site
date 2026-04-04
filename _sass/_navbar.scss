@@ -1,5 +1,5 @@
 .navbar-custom {
-	background-color: white;
+	background-color: $bg-color;
 	border: 0;
 	border-radius: 0;
 	z-index: 1000;
@@ -39,7 +39,7 @@
 	letter-spacing: 4px;
 	font-weight: 400;
 	font-size: 22px;
-	color: $io-blue;
+	color: $text-color;
 	display: flex;
 	align-items: center;
 
@@ -63,7 +63,7 @@
 
 .navbar-custom .nav li > a {
 	position: relative;
-	color: $io-blue;
+	color: $text-color;
 }
 
 .navbar-custom .dropdown-menu > li > a {
@@ -96,7 +96,7 @@
 .navbar-custom .dropdown-menu > li > a:focus,
 .navbar-custom .dropdown-menu > li > a:hover {
 	background: none;
-	color: $io-blue;
+	color: #ffffff;
 }
 
 .navbar-custom .dropdown-menu > li > a:hover {
@@ -118,7 +118,7 @@
 }
 
 .navbar-custom .navbar-toggle .icon-bar {
-	background: #333333;
+	background: #cccccc;
 }
 
 .dropdown-menu {

@@ -4,7 +4,7 @@ a {
 
 a:hover, a:focus {
 	text-decoration: none;
-	color: #aaa;
+	color: #cccccc;
 	outline: 0;
 }
 
@@ -57,14 +57,14 @@ blockquote {
 	text-align: center;
 	font-weight: 400;
 	font-size: 30px;
-	color: $io-blue;
+	color: $text-color;
 	margin: 0 0 70px;
 }
 
 .module-subtitle {
 	text-align: center;
 	font-size: 16px;
-	color: #111;
+	color: #cccccc;
 	margin-bottom: 70px;
 }
 
@@ -88,12 +88,12 @@ blockquote {
 	display: table-cell;
 	white-space: pre;
 	padding: 0 8px;
-	color: #111;
+	color: #cccccc;
 }
 
 /* Finance case study header */
 .finance-image-content {
-	border: 1px solid #e5e5e5;
+	border: 1px solid #333;
 	padding: 60px 0px;
 
 	.module-title {
