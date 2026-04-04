@@ -22,9 +22,9 @@ gulp.task('compress', function() {
 });
 
 gulp.task('fonts', function() {
-    return gulp.src('./assets/lib/**/*.+{woff,woff2,eot,svg,ttf}')
+    return gulp.src('assets/lib/**/*.{woff,woff2,eot,svg,ttf}', { encoding: false })
         .pipe(flatten())
-        .pipe(gulp.dest('./_site/fonts'));
+        .pipe(gulp.dest('_site/fonts'));
 });
 
-gulp.task('default', ['compress', 'fonts']);
+gulp.task('default', gulp.parallel('compress', 'fonts'));
