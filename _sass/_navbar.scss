@@ -43,6 +43,13 @@
 	display: flex;
 	align-items: center;
 
+	img {
+		width: 50px;
+		height: 50px;
+		max-width: 50px;
+		display: block;
+	}
+
 	h1 {
 		line-height: 1;
 		font-size: 2rem;
