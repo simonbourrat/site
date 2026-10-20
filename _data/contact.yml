@@ -2,4 +2,17 @@ email: bourrat.simon@gmail.com
 phone:
   number: 0601468437
   display: 06 01 46 84 37
-quote: You can’t depend on your eyes when your imagination is out of focus.
+quote: You can't depend on your eyes when your imagination is out of focus.
+social:
+  - name: Instagram
+    url: "https://www.instagram.com/simon_brrat/"
+    icon: "fa-instagram"
+  - name: Vimeo
+    url: "https://vimeo.com/user17236674"
+    icon: "fa-vimeo"
+  - name: IMDB
+    url: "https://www.imdb.com/fr/name/nm2869466/"
+    icon: "fa-imdb"
+  - name: LinkedIn
+    url: "https://www.linkedin.com/in/simon-bourrat-8a23bab5/"
+    icon: "fa-linkedin"
