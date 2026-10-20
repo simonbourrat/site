@@ -7,17 +7,34 @@ layout: page
     margin-right: 0;
     margin-left: 0;
   }
+  .bio-text {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .bio-text p {
+    margin-bottom: 15px;
+  }
 </style>
 <section class="module home-section home-full-height bg-dark  bg" id="contact"
          data-background="assets/images/contact_bg.jpg">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 col-sm-offset-3">
-        <h2 class="module-title font-alt">Contact</h2>
+      <div class="col-sm-8 col-sm-offset-2">
+        <h2 class="module-title font-alt">Simon Bourrat</h2>
+      </div>
+    </div>
+    <div class="row mb-30">
+      <div class="col-sm-8 col-sm-offset-2 bio-text">
+        <p>Chef opérateur avec une spécialité drone, je travaille dans l'image depuis 15 ans.</p>
+        <p>Le documentaire est au cœur de mon travail dans lequel je trouve une richesse unique, celle des rencontres, du réel et de l'imprévu.</p>
+        <p>J'aime particulièrement filmer les portraits, capter une présence, une émotion, à travers la caméra.</p>
+        <p>En parallèle, j'interviens également en fiction et en publicité comme opérateur drone pour des prises de vue aériennes.</p>
+        <p>Étalonneur, je finalise mes films et j'accompagne certains des projets documentaires ou institutionnels sur lesquels j'ai travaillé au tournage.</p>
+        <p>Je transmet aussi mon expérience en enseignant l'image dans une école d'audiovisuel à Lyon.</p>
       </div>
     </div>
     <div class="row mb-20">
-      <div class="col-sm-6 col-sm-offset-3 medium-text">
+      <div class="col-sm-8 col-sm-offset-2 medium-text">
           <div class="row">
             <div class="col-lg-6"><span class="icon-envelope" style="width: 20px"></span> <a href="mailto:{{site.data.contact.email}}">{{site.data.contact.email}}</a></div>
             <div class="col-lg-6 phone-number"><span class="icon-mobile" style="width: 20px"></span> <a href="tel:{{site.data.contact.phone.number}}">{{site.data.contact.phone.display}}</a></div>
@@ -25,7 +42,7 @@ layout: page
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-6 col-sm-offset-3">
+      <div class="col-sm-8 col-sm-offset-2">
         <form name="contact" netlify-honeypot="phone" netlify>
           <div class="form-group">
             <label class="sr-only" for="name">Name</label>
