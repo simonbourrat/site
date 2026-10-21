@@ -12,6 +12,17 @@ layout: page
            height:360px;
          }
         }
+        /* YouTube impose son propre ratio : on force la meme hauteur que les Vimeo */
+        .video-item iframe[src*="youtube.com"] {
+          height: 312px;
+          max-height: 312px;
+        }
+        @media (min-width:1200px) {
+          .video-item iframe[src*="youtube.com"] {
+            height: 360px;
+            max-height: 360px;
+          }
+        }
     </style>
     <div class="container">
         {% for video in site.data.realisation %}
