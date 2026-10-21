@@ -28,6 +28,22 @@ layout: page
     background-color: #000;
     padding: 8px;
   }
+  /* Reseaux sociaux sous la photo */
+  .contact-social {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  .contact-social a {
+    display: inline-block;
+    padding: 0 12px;
+    color: #cccccc;
+    font-size: 22px;
+    transition: color 0.3s ease;
+  }
+  .contact-social a:hover,
+  .contact-social a:focus {
+    color: #ffffff;
+  }
   /* Espace avant le formulaire */
   .contact-form-block {
     margin-top: 60px;
@@ -59,6 +75,13 @@ layout: page
       <div class="col-sm-4 col-sm-offset-2">
         <img class="contact-photo" src="assets/images/photo_page_contact.jpg"
              alt="Simon Bourrat"/>
+        <div class="contact-social">
+          {% for link in site.data.contact.social %}
+          <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" title="{{ link.name }}">
+            <i class="fa {{ link.icon }}"></i>
+          </a>
+          {% endfor %}
+        </div>
       </div>
       <div class="col-sm-4 bio-text">
         <p>Chef opérateur avec une spécialité drone, je travaille dans l'image depuis 15 ans.</p>
