@@ -14,6 +14,29 @@ layout: page
   .bio-text p {
     margin-bottom: 15px;
   }
+  /* Photo de presentation : miniature sur fond noir */
+  .contact-photo {
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    margin: 0 auto 25px auto;
+    background-color: #000;
+    padding: 8px;
+  }
+  /* Espace avant le formulaire */
+  .contact-form-block {
+    margin-top: 60px;
+  }
+  @media (max-width: 767px) {
+    .contact-photo {
+      max-width: 240px;
+      margin-bottom: 20px;
+    }
+    .contact-form-block {
+      margin-top: 40px;
+    }
+  }
 </style>
 <section class="module home-section home-full-height bg-dark  bg" id="contact"
          data-background="assets/images/contact_bg.jpg">
@@ -23,8 +46,14 @@ layout: page
         <h2 class="module-title font-alt">Simon Bourrat</h2>
       </div>
     </div>
+
+    <!-- Photo + texte descriptif cote a cote -->
     <div class="row mb-30">
-      <div class="col-sm-8 col-sm-offset-2 bio-text">
+      <div class="col-sm-4 col-sm-offset-2">
+        <img class="contact-photo" src="assets/images/photo_page_contact.jpg"
+             alt="Simon Bourrat"/>
+      </div>
+      <div class="col-sm-4 bio-text">
         <p>Chef opérateur avec une spécialité drone, je travaille dans l'image depuis 15 ans.</p>
         <p>Le documentaire est au cœur de mon travail dans lequel je trouve une richesse unique, celle des rencontres, du réel et de l'imprévu.</p>
         <p>J'aime particulièrement filmer les portraits, capter une présence, une émotion, à travers la caméra.</p>
@@ -33,6 +62,8 @@ layout: page
         <p>Je transmet aussi mon expérience en enseignant l'image dans une école d'audiovisuel à Lyon.</p>
       </div>
     </div>
+
+    <!-- Coordonnees -->
     <div class="row mb-20">
       <div class="col-sm-8 col-sm-offset-2 medium-text">
           <div class="row">
@@ -41,7 +72,9 @@ layout: page
           </div>
       </div>
     </div>
-    <div class="row">
+
+    <!-- Formulaire de contact -->
+    <div class="row contact-form-block">
       <div class="col-sm-8 col-sm-offset-2">
         <form name="contact" netlify-honeypot="phone" netlify>
           <div class="form-group">
