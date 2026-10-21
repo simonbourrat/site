@@ -14,6 +14,11 @@ layout: page
   .bio-text p {
     margin-bottom: 15px;
   }
+  /* Coordonnees sous le texte de la bio */
+  .bio-contact {
+    margin-top: 25px;
+    white-space: nowrap;
+  }
   /* Photo de presentation : pleine largeur de sa colonne, fond noir */
   .contact-photo {
     display: block;
@@ -62,16 +67,10 @@ layout: page
         <p>En parallèle, j'interviens également en fiction et en publicité comme opérateur drone pour des prises de vue aériennes.</p>
         <p>Étalonneur, je finalise mes films et j'accompagne certains des projets documentaires ou institutionnels que j'ai tourné.</p>
         <p>Je transmet aussi mon expérience en enseignant l'image dans une école d'audiovisuel à Lyon.</p>
-      </div>
-    </div>
-
-    <!-- Coordonnees -->
-    <div class="row mb-20">
-      <div class="col-sm-8 col-sm-offset-2 medium-text">
-          <div class="row">
-            <div class="col-lg-6"><span class="icon-envelope" style="width: 20px"></span> <a href="mailto:{{site.data.contact.email}}">{{site.data.contact.email}}</a></div>
-            <div class="col-lg-6 phone-number"><span class="icon-mobile" style="width: 20px"></span> <a href="tel:{{site.data.contact.phone.number}}">{{site.data.contact.phone.display}}</a></div>
-          </div>
+        <p class="bio-contact">
+          <span class="icon-envelope" style="width: 20px"></span> <a href="mailto:{{site.data.contact.email}}">{{site.data.contact.email}}</a>
+          <span class="icon-mobile" style="width: 20px; margin-left: 20px"></span> <a href="tel:{{site.data.contact.phone.number}}">{{site.data.contact.phone.display}}</a>
+        </p>
       </div>
     </div>
 
