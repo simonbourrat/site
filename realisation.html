@@ -2,87 +2,131 @@
 layout: page
 ---
 <style>
-
+    .video-list {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    .video-item {
+        position: relative;
+        margin-bottom: 40px;
+        overflow: hidden;
+        cursor: pointer;
+        background: #000;
+    }
+    .video-item a {
+        display: block;
+        position: relative;
+        text-decoration: none;
+        color: #fff;
+    }
+    .video-thumb {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease, opacity 0.4s ease;
+    }
+    .video-item:hover .video-thumb {
+        transform: scale(1.04);
+        opacity: 0.85;
+    }
+    .video-overlay {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 24px 26px;
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 55%, rgba(0,0,0,0) 100%);
+        color: #fff;
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 0.35s ease, transform 0.35s ease;
+        pointer-events: none;
+    }
+    .video-item:hover .video-overlay {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .video-overlay h3 {
+        margin: 0 0 6px 0;
+        font-size: 15px;
+        line-height: 1.4;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #fff;
+    }
+    .video-overlay p {
+        margin: 0;
+        font-size: 12px;
+        letter-spacing: 1px;
+        color: #ccc;
+    }
+    .video-play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 70px;
+        height: 70px;
+        margin: -35px 0 0 -35px;
+        border: 1px solid rgba(255,255,255,0.9);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        color: #fff;
+        background: rgba(0,0,0,0.25);
+        opacity: 0;
+        transform: scale(0.9);
+        transition: opacity 0.35s ease, transform 0.35s ease;
+        pointer-events: none;
+    }
+    .video-item:hover .video-play {
+        opacity: 1;
+        transform: scale(1);
+    }
+    @media (max-width: 767px) {
+        .video-item { margin-bottom: 24px; }
+        .video-overlay {
+            opacity: 1;
+            transform: translateY(0);
+            padding: 14px 16px;
+        }
+        .video-overlay h3 { font-size: 12px; letter-spacing: 1px; }
+        .video-play { display: none; }
+    }
 </style>
 <section class="module-extra-small">
-    <style>
-        .video-grid-item {
-            margin-bottom: 40px;
-        }
-        .video-grid-item iframe {
-            width: 100%;
-            height: 215px;
-            display: block;
-        }
-        .video-grid-info {
-            margin-top: 12px;
-        }
-        .video-grid-info h3 {
-            margin: 0 0 6px 0;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-align: left;
-        }
-        .video-grid-info p {
-            margin: 0;
-            font-size: 12px;
-            color: #999;
-            text-align: left;
-        }
-        /* YouTube impose son propre ratio : on force la meme taille que les Vimeo
-           via un conteneur a hauteur fixe + iframe en position absolue */
-        .video-grid-item .yt-wrap {
-          position: relative;
-          width: 100%;
-          height: 215px;
-          overflow: hidden;
-        }
-        .video-grid-item .yt-wrap iframe {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100% !important;
-          max-height: 100% !important;
-        }
-        @media (min-width: 576px) {
-          .video-grid-item iframe { height: 200px; }
-          .video-grid-item .yt-wrap { height: 200px; }
-        }
-        @media (min-width: 768px) {
-          .video-grid-item iframe { height: 190px; }
-          .video-grid-item .yt-wrap { height: 190px; }
-        }
-        @media (min-width: 992px) {
-          .video-grid-item iframe { height: 210px; }
-          .video-grid-item .yt-wrap { height: 210px; }
-        }
-        @media (min-width: 1200px) {
-          .video-grid-item iframe { height: 240px; }
-          .video-grid-item .yt-wrap { height: 240px; }
-        }
-    </style>
     <div class="container">
         <div class="row">
-            {% for video in site.data.realisation %}
-            <div class="col-xs-12 col-sm-6 col-md-4 video-grid-item">
-                {% if video.platform == "youtube" %}
-                <div class="yt-wrap">
-                <iframe src="https://www.youtube.com/embed/{{ video.id }}" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
+            <div class="col-xs-12 video-list">
+                {% for video in site.data.realisation %}
+                {% assign type = "vimeo" %}
+                {% if video.platform == "youtube" %}{% assign type = "youtube" %}{% endif %}
+                {% assign thumb_local = "/assets/images/realisation/" | append: type | append: "-" | append: video.id | append: ".jpg" %}
+                {% if type == "youtube" %}
+                    {% assign thumb_remote = "https://img.youtube.com/vi/" | append: video.id | append: "/maxresdefault.jpg" %}
+                    {% assign embed = "https://www.youtube.com/embed/" | append: video.id | append: "?autoplay=1&rel=0" %}
                 {% else %}
-                <iframe src="https://player.vimeo.com/video/{{ video.id }}?title=0&byline=0&portrait=0" frameborder="0"
-                        webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    {% assign thumb_remote = "https://vumbnail.com/" | append: video.id | append: ".jpg" %}
+                    {% assign embed = "https://player.vimeo.com/video/" | append: video.id | append: "?autoplay=1&title=0&byline=0&portrait=0" %}
                 {% endif %}
-                <div class="video-grid-info">
-                    <h3>{{ video.titre }}</h3>
-                    {% if video.description %}<p>{{ video.description }}</p>{% endif %}
+                <div class="video-item">
+                    <a href="{{ embed }}" class="video-pop-up" data-mfp-src="{{ embed }}" aria-label="{{ video.titre }}">
+                        <img src="{{ thumb_local | relative_url }}"
+                             alt="{{ video.titre }}"
+                             class="video-thumb"
+                             width="1280" height="720"
+                             loading="lazy"
+                             onerror="this.onerror=null;this.src='{{ thumb_remote }}';">
+                        <span class="video-play"><i class="fa fa-play"></i></span>
+                        <div class="video-overlay">
+                            <h3>{{ video.titre }}</h3>
+                            {% if video.description %}<p>{{ video.description }}</p>{% endif %}
+                        </div>
+                    </a>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
     </div>
 </section>
