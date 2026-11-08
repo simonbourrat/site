@@ -2,34 +2,36 @@
 layout: page
 ---
 <style>
-    .video-list {
+    .real-video-list {
         max-width: 900px;
         margin: 0 auto;
     }
-    .video-item {
+    .real-video-item {
+        display: block;
         position: relative;
-        margin-bottom: 40px;
+        padding: 0;
+        margin: 0 0 40px 0;
         overflow: hidden;
         cursor: pointer;
         background: #000;
     }
-    .video-item a {
+    .real-video-item a {
         display: block;
         position: relative;
         text-decoration: none;
         color: #fff;
     }
-    .video-thumb {
+    .real-video-thumb {
         width: 100%;
         height: auto;
         display: block;
         transition: transform 0.5s ease, opacity 0.4s ease;
     }
-    .video-item:hover .video-thumb {
+    .real-video-item:hover .real-video-thumb {
         transform: scale(1.04);
         opacity: 0.85;
     }
-    .video-overlay {
+    .real-video-overlay {
         position: absolute;
         left: 0;
         right: 0;
@@ -42,25 +44,27 @@ layout: page
         transition: opacity 0.35s ease, transform 0.35s ease;
         pointer-events: none;
     }
-    .video-item:hover .video-overlay {
+    .real-video-item:hover .real-video-overlay {
         opacity: 1;
         transform: translateY(0);
     }
-    .video-overlay h3 {
+    .real-video-overlay h3 {
         margin: 0 0 6px 0;
         font-size: 15px;
         line-height: 1.4;
+        text-align: left;
         text-transform: uppercase;
         letter-spacing: 2px;
         color: #fff;
     }
-    .video-overlay p {
+    .real-video-overlay p {
         margin: 0;
         font-size: 12px;
         letter-spacing: 1px;
+        text-align: left;
         color: #ccc;
     }
-    .video-play {
+    .real-video-play {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -80,46 +84,46 @@ layout: page
         transition: opacity 0.35s ease, transform 0.35s ease;
         pointer-events: none;
     }
-    .video-item:hover .video-play {
+    .real-video-item:hover .real-video-play {
         opacity: 1;
         transform: scale(1);
     }
     @media (max-width: 767px) {
-        .video-item { margin-bottom: 24px; }
-        .video-overlay {
+        .real-video-item { margin-bottom: 24px; }
+        .real-video-overlay {
             opacity: 1;
             transform: translateY(0);
             padding: 14px 16px;
         }
-        .video-overlay h3 { font-size: 12px; letter-spacing: 1px; }
-        .video-play { display: none; }
+        .real-video-overlay h3 { font-size: 12px; letter-spacing: 1px; }
+        .real-video-play { display: none; }
     }
 </style>
 <section class="module-extra-small">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 video-list">
+            <div class="col-xs-12 real-video-list">
                 {% for video in site.data.realisation %}
                 {% assign type = "vimeo" %}
                 {% if video.platform == "youtube" %}{% assign type = "youtube" %}{% endif %}
                 {% assign thumb_local = "/assets/images/realisation/" | append: type | append: "-" | append: video.id | append: ".jpg" %}
                 {% if type == "youtube" %}
                     {% assign thumb_remote = "https://img.youtube.com/vi/" | append: video.id | append: "/maxresdefault.jpg" %}
-                    {% assign embed = "https://www.youtube.com/embed/" | append: video.id | append: "?autoplay=1&rel=0" %}
+                    {% assign watch = "https://www.youtube.com/watch?v=" | append: video.id %}
                 {% else %}
                     {% assign thumb_remote = "https://vumbnail.com/" | append: video.id | append: ".jpg" %}
-                    {% assign embed = "https://player.vimeo.com/video/" | append: video.id | append: "?autoplay=1&title=0&byline=0&portrait=0" %}
+                    {% assign watch = "https://vimeo.com/" | append: video.id %}
                 {% endif %}
-                <div class="video-item">
-                    <a href="{{ embed }}" class="video-pop-up" data-mfp-src="{{ embed }}" aria-label="{{ video.titre }}">
+                <div class="real-video-item">
+                    <a href="{{ watch }}" class="video-pop-up" aria-label="{{ video.titre }}">
                         <img src="{{ thumb_local | relative_url }}"
                              alt="{{ video.titre }}"
-                             class="video-thumb"
+                             class="real-video-thumb"
                              width="1280" height="720"
                              loading="lazy"
                              onerror="this.onerror=null;this.src='{{ thumb_remote }}';">
-                        <span class="video-play"><i class="fa fa-play"></i></span>
-                        <div class="video-overlay">
+                        <span class="real-video-play"><i class="fa fa-play"></i></span>
+                        <div class="real-video-overlay">
                             <h3>{{ video.titre }}</h3>
                             {% if video.description %}<p>{{ video.description }}</p>{% endif %}
                         </div>
