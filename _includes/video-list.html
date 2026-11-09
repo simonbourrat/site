@@ -1,0 +1,36 @@
+<section class="module-extra-small">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 sb-video-list">
+                {% for video in include.videos %}
+                {% assign type = "vimeo" %}
+                {% if video.platform == "youtube" %}{% assign type = "youtube" %}{% endif %}
+                {% assign thumb_local = "/assets/images/" | append: include.thumbdir | append: "/" | append: type | append: "-" | append: video.id | append: ".jpg" %}
+                {% if type == "youtube" %}
+                    {% assign thumb_remote = "https://img.youtube.com/vi/" | append: video.id | append: "/maxresdefault.jpg" %}
+                    {% assign watch = "https://www.youtube.com/watch?v=" | append: video.id %}
+                {% else %}
+                    {% assign thumb_remote = "https://vumbnail.com/" | append: video.id | append: ".jpg" %}
+                    {% assign watch = "https://vimeo.com/" | append: video.id %}
+                {% endif %}
+                <div class="sb-video-item">
+                    <a href="{{ watch }}" class="video-pop-up" aria-label="{{ video.titre | escape }}">
+                        <img src="{{ thumb_local | relative_url }}"
+                             alt="{{ video.titre | escape }}"
+                             class="sb-video-thumb"
+                             width="1280" height="720"
+                             loading="lazy"
+                             onerror="this.onerror=null;this.src='{{ thumb_remote }}';">
+                        <span class="sb-video-play"><i class="fa fa-play"></i></span>
+                        <div class="sb-video-overlay">
+                            <h3>{{ video.titre }}</h3>
+                            {% assign desc = video.description | strip %}
+                            {% if desc and desc != "" %}<p>{{ desc }}</p>{% endif %}
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
