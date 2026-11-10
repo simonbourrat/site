@@ -1,0 +1,25 @@
+# Configuration de deploiement Netlify, versionnee dans le depot.
+# https://www.simonbourrat.com
+#
+# Pourquoi ce fichier : les reglages de build ne sont plus caches dans
+# l'interface Netlify. Tout est ici, lisible et reproductible.
+#
+# Pourquoi « jekyll build » seul : l'ancienne commande npm run build
+# (Jekyll + Gulp) depend de `fibers`, un module natif obsolete qui fait
+# echouer `npm ci` sur les Node recents. Le build Jekyll seul est celui
+# que nous utilisons et validons en local depuis le debut.
+#
+# .npmrc (ignore-scripts=true) empeche l'installation automatique des
+# dependances Node par Netlify de tenter de compiler `fibers`.
+
+[build]
+  command = "bundle exec jekyll build"
+  publish = "_site"
+
+[build.environment]
+  JEKYLL_ENV = "production"
+  RUBY_VERSION = "3.1"
+  NODE_VERSION = "18"
+
+# La branche de production reste un reglage du tableau de bord Netlify
+# (Site settings -> Build & deploy -> Production branch), a priori "master".

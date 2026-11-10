@@ -25,3 +25,6 @@ exclude:
   - Gemfile.lock
   - gulpfile.js
   - flightplan.js
+  - netlify.toml
+  - .npmrc
+  - outils/
