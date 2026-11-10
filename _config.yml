@@ -3,6 +3,10 @@ markdown: kramdown
 theme: minima
 description: "Simon Bourrat // Chef Op . Drone . Réalisateur // Lyon, Paris"
 
+# Cloudflare Web Analytics (gratuit, sans cookie, sans bandeau de consentement).
+# Mettre "" pour desactiver.
+cloudflare_analytics_token: "4f444af3c84940949be52c153ef4adda"
+
 defaults:
   -
     scope:
