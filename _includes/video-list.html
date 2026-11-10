@@ -6,15 +6,21 @@
                 {% assign type = "vimeo" %}
                 {% if video.platform == "youtube" %}{% assign type = "youtube" %}{% endif %}
                 {% assign thumb_local = "/assets/images/" | append: include.thumbdir | append: "/" | append: type | append: "-" | append: video.id | append: ".jpg" %}
+                {% assign start = video.start | default: 0 | plus: 0 %}
+                {% assign lightbox = "" %}
                 {% if type == "youtube" %}
                     {% assign thumb_remote = "https://img.youtube.com/vi/" | append: video.id | append: "/maxresdefault.jpg" %}
                     {% assign watch = "https://www.youtube.com/watch?v=" | append: video.id %}
+                    {% if start > 0 %}
+                        {% assign watch = watch | append: "&t=" | append: start | append: "s" %}
+                        {% assign lightbox = "https://www.youtube-nocookie.com/embed/" | append: video.id | append: "?autoplay=1&start=" | append: start %}
+                    {% endif %}
                 {% else %}
                     {% assign thumb_remote = "https://vumbnail.com/" | append: video.id | append: ".jpg" %}
                     {% assign watch = "https://vimeo.com/" | append: video.id %}
                 {% endif %}
                 <div class="sb-video-item">
-                    <a href="{{ watch }}" class="video-pop-up" aria-label="{{ video.titre | escape }}">
+                    <a href="{{ watch }}" class="video-pop-up"{% if lightbox != "" %} data-mfp-src="{{ lightbox }}"{% endif %} aria-label="{{ video.titre | escape }}">
                         <img src="{{ thumb_local | relative_url }}"
                              alt="{{ video.titre | escape }}"
                              class="sb-video-thumb"
