@@ -1,0 +1,46 @@
+# Ordre d'affichage de la galerie photographie.
+# Seules les photos listees ici apparaissent sur le site : un fichier peut
+# donc rester sur le disque sans etre publie.
+#
+# Pour ajouter une photo : deposer <nom>.jpg dans assets/images/gallery/ ET
+# assets/images/thumb/, puis ajouter son nom (sans extension) a cette liste,
+# a la position voulue.
+
+- "1000"
+- "2000"
+- "3000"
+- "4000"
+- "5000"
+- "21000"
+- "6000"
+- "6200"
+- "6300"
+- "7000"
+- "7100"
+- "7500"
+- "7600"
+- "8000"
+- "10000"
+- "12000"
+- "13000"
+- "13100"
+- "13200"
+- "13400"
+- "16000"
+- "22000"
+- "23000"
+- "7200"
+- "7300"
+- "7400"
+- "7410"
+- "7420"
+- "32000"
+- "36000"
+- "37000"
+- "38000"
+- "40000"
+- "40100"
+- "41000"
+- "42000"
+- "43000"
+- "44000"
