@@ -13,6 +13,11 @@
   description: Réalisation
   platform: youtube
 
+- id: 303527776
+  titre: Morgan Bouttier - Totem Animals
+  description: Réalisation
+  platform: vimeo
+
 - id: 870593591
   titre: STEGONAUTE - SLEEPING GIANTS
   description: Réalisation
@@ -20,11 +25,6 @@
 
 - id: 773440966
   titre: Quatuor Yako & Mieko Miyazaki
-  description: Réalisation
-  platform: vimeo
-
-- id: 303527776
-  titre: Morgan Bouttier - Totem Animals
   description: Réalisation
   platform: vimeo
 

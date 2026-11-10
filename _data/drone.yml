@@ -1,29 +1,69 @@
+- id: BfZgooo8_m0
+  titre: "GLACIER"
+  description: "Avant l'orage"
+  platform: youtube
+
 - id: 295822407
   titre: Le sens marin
-  description: "
-  Block 8 Production"
+  description: "Block 8 Production"
   platform: vimeo
 
 - id: 288393864
   titre: Chasing Lights in the Himalayas
-  description: "
-  Block 8 Production"
+  description: "Block 8 Production"
+  platform: vimeo
+
+- id: 1176164203
+  titre: "Ceux d'en haut"
+  description: "Block 8 Production"
   platform: vimeo
 
 - id: 825451178
   titre: THE LONE VALLEY
-  description: "
-  Impeesa Production"
+  description: "Impeesa Production"
   platform: vimeo
+
+- id: xpNBaJjwH2w
+  titre: "Let me freeze again"
+  description: "Concert de l'Hostel Dieu"
+  platform: youtube
+
+- id: KwGe18AdFUE
+  titre: "Eli & Fur"
+  description: "Cercle"
+  platform: youtube
+
+- id: RJaV5BX-xpE
+  titre: "Anfisa Letyago"
+  description: "Cercle"
+  platform: youtube
+
+- id: 9wbZEPrFd10
+  titre: "Eelke Kleijn"
+  description: "Cercle"
+  platform: youtube
+
+- id: as9eJ1Tzq10
+  titre: "Kid Francescoli"
+  description: "Cercle"
+  platform: youtube
+
+- id: pA96m95T3NA
+  titre: "Parra for Cuva"
+  description: "Cercle"
+  platform: youtube
+
+- id: isRRJOpF4Co
+  titre: "Joris Delacroix"
+  description: "Cercle"
+  platform: youtube
 
 - id: 250168825
   titre: Everest Green
-  description: "
-  Ushuaïa TV - Block 8 Production"
+  description: "Ushuaïa TV - Block 8 Production"
   platform: vimeo
 
 - id: 251114050
   titre: Papouasie, expédition au coeur d'un monde perdu
-  description: "
-  Arte - Mona Lisa Production"
+  description: "Arte - Mona Lisa Production"
   platform: vimeo
