@@ -3,6 +3,11 @@ markdown: kramdown
 theme: minima
 description: "Simon Bourrat // Chef Op . Drone . Réalisateur // Lyon, Paris"
 
+# Mesure d'audience (Google Analytics 4).
+# Laisser vide pour ne charger aucun script de tracking.
+# Pour activer : mettre l'ID de mesure GA4, ex. "G-XXXXXXXXXX".
+google_analytics: ""
+
 defaults:
   -
     scope:
