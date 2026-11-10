@@ -5,6 +5,10 @@
 # Pour ajouter une photo : deposer <nom>.jpg dans assets/images/gallery/ ET
 # assets/images/thumb/, puis ajouter son nom (sans extension) a cette liste,
 # a la position voulue.
+#
+# Regle pour les deplacements : « mettre X a la place de Y » = ECHANGE
+# (Y prend la place laissee par X). Seul « supprimer ... sur le site »
+# retire reellement une photo de l'affichage.
 
 - "1000"
 - "2000"
@@ -26,6 +30,9 @@
 - "13100"
 - "16000"
 - "22000"
+- "13200"
+- "13400"
+- "6200"
 - "7200"
 - "7410"
 - "7420"
