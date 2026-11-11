@@ -2,6 +2,7 @@
   titre: "Making Of - QUE DU PAPIER"
   description: "Block 8 Production"
   platform: vimeo
+  hide_title: true
 
 - id: f1W6dcMAN4c
   titre: "bref, j’ai déposé un brevet"
@@ -12,6 +13,7 @@
   titre: "Memories From The Future"
   description: "Blooming Discord"
   platform: youtube
+  hide_title: true
 
 - id: 869139783
   titre: RAYMOND WEIL | Freelancer Pilot Flyback

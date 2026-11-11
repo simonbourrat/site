@@ -3,6 +3,9 @@
     .sb-video-list {
         max-width: 900px;
         margin: 0 auto;
+        /* Bootstrap met float:left sur .col-xs-12, ce qui annule margin:auto.
+           Sans ce float:none, la colonne reste alignee a gauche. */
+        float: none;
     }
     .sb-video-item {
         display: block;
@@ -63,6 +66,12 @@
         letter-spacing: 1px;
         text-align: left;
         color: #ccc;
+    }
+    /* Quand le titre est masque, le sous-titre devient la seule ligne :
+       on le rend un peu plus lisible sans changer son texte. */
+    .sb-video-overlay--subtitle-only p {
+        font-size: 14px;
+        color: #fff;
     }
     .sb-video-play {
         position: absolute;
