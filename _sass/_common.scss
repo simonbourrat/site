@@ -5,9 +5,9 @@ html {
 }
 
 body {
-	background: #fff;
+	background: $bg-color;
 	font: 400 12px/1.8 "Open Sans", sans-serif;
-	color: $io-blue;
+	color: $text-color;
 	-webkit-font-smoothing: antialiased;
 }
 
@@ -117,7 +117,7 @@ a,
 }
 
 .et-icons .box1 {
-	border: 1px solid #e5e5e5;
+	border: 1px solid #333;
 	display: block;
 	width: 25%;
 	float: left;
@@ -128,7 +128,7 @@ a,
 
 .et-icons .box1 > span {
 	display: inline-block;
-	border-right: 1px solid #e5e5e5;
+	border-right: 1px solid #333;
 	min-width: 60px;
 	min-height: 60px;
 	text-align: center;
@@ -139,7 +139,7 @@ a,
 
 .fa-icons > div {
 	padding: 0;
-	border: 1px solid #e5e5e5;
+	border: 1px solid #333;
 	margin: -1px 0 0 -1px;
 	font-size: 13px;
 }
@@ -149,7 +149,7 @@ a,
 	margin-right: 5px;
 	min-width: 40px;
 	min-height: 40px;
-	border-right: 1px solid #f1f1f1;
+	border-right: 1px solid #333;
 	line-height: 40px;
 	text-align: center;
 	font-size: 14px;
@@ -169,7 +169,7 @@ a,
 
 .main {
 	position: relative;
-	background-color: #fff;
+	background-color: $bg-color;
 	z-index: 1;
 }
 
@@ -208,7 +208,7 @@ a,
 }
 
 .holder-w:before {
-	border-top: 1px solid #eaeaea;
+	border-top: 1px solid #333;
 	position: relative;
 	display: block;
 	content: "";
@@ -220,7 +220,7 @@ a,
 /* Sections dividers */
 
 .divider-w {
-	border-top: 1px solid #eaeaea;
+	border-top: 1px solid #333;
 	margin: 0;
 }
 
@@ -243,9 +243,9 @@ a,
 }
 
 .side-image-text {
-	background: #fff;
-	border-top: 1px solid #e5e5e5;
-	border-bottom: 1px solid #e5e5e5;
+	background: $bg-color;
+	border-top: 1px solid #333;
+	border-bottom: 1px solid #333;
 	padding: 140px 60px 140px;
 }
 
@@ -444,14 +444,14 @@ a,
 }
 
 .scroll-up a {
-	background: #fff;
+	background: #333;
 	display: block;
 	height: 28px;
 	width: 28px;
 	text-align: center;
 	line-height: 28px;
 	font-size: 14px;
-	color: #000;
+	color: #fff;
 	opacity: 0.6;
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
@@ -462,7 +462,7 @@ a,
 .scroll-up a:hover,
 .scroll-up a:active {
 	opacity: 1;
-	color: #000;
+	color: #fff;
 }
 
 /* Video */

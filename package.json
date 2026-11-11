@@ -1,5 +1,5 @@
 {
-  "name": "ioweb-site-v2",
+  "name": "simonbourrat-website",
   "version": "1.0.0",
   "private": true,
   "description": "## Todo",
@@ -10,22 +10,24 @@
   },
   "devDependencies": {
     "flightplan": "^0.6.17",
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.8.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
     "gulp-css-url-adjuster": "^0.2.3",
-    "gulp-flatten": "^0.3.1",
-    "gulp-inline-source": "^3.1.0",
-    "gulp-rev": "^8.0.0",
-    "gulp-uglify": "^3.0.0",
-    "gulp-usemin": "^0.3.28"
+    "gulp-flatten": "^0.4.0",
+    "gulp-inline-source": "^4.0.0",
+    "gulp-rev": "^9.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-usemin": "^0.3.30",
+    "http-server": "^14.1.1"
   },
   "scripts": {
     "serve": "bundle exec jekyll serve",
-    "build": "bundle exec jekyll build && gulp"
+    "build": "bundle exec jekyll build && gulp",
+    "preview": "npm run build && http-server _site -p 4000"
   },
   "repository": {
     "type": "git",
-    "url": "git@git.ioweb.fr:ioweb/site-v2.git"
+    "url": "git@github.com:simonbourrat/site.git"
   },
   "author": "",
   "license": "UNLICENSED"

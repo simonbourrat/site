@@ -1,0 +1,10 @@
+{% comment %}
+  Cloudflare Web Analytics : gratuit, sans cookie, sans bandeau de consentement.
+  Le token est dans _config.yml (cloudflare_analytics_token).
+  Mettre la valeur a "" pour desactiver.
+{% endcomment %}
+{% if site.cloudflare_analytics_token and site.cloudflare_analytics_token != "" %}
+<!-- Cloudflare Web Analytics -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "{{ site.cloudflare_analytics_token }}"}'></script>
+<!-- End Cloudflare Web Analytics -->
+{% endif %}

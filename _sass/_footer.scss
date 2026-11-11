@@ -1,5 +1,22 @@
 .footer {
-	padding: 10px 0;
+	padding: 15px 0;
+	background-color: #111111;
+
+	.social-links {
+		text-align: center;
+
+		a {
+			display: inline-block;
+			padding: 0 12px;
+			color: #cccccc;
+			font-size: 18px;
+			transition: color 0.3s ease;
+
+			&:hover, &:focus {
+				color: #ffffff;
+			}
+		}
+	}
 
 	.copyright {
 		margin: 0;
