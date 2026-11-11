@@ -8,9 +8,60 @@ hidefooter: true
         #vimeo_player_bgndVideo {
             top: -30px !important;
         }
+        /*
+         * Le plugin mb.vimeo_player desactive la video de fond sur mobile.
+         * On utilise alors ce lecteur Vimeo en mode "background" (muet,
+         * en boucle, lecture inline), dimensionne en cover : il remplit
+         * l'ecran quitte a etre rogne, comme sur ordinateur.
+         * La classe .home-video-on est ajoutee par assets/js/main.js
+         * uniquement sur appareil mobile.
+         */
+        .home-video-mobile {
+            display: none;
+        }
+        #home.home-video-on .home-video-mobile {
+            display: block;
+            /* !important : le plugin mb.vimeo_player pose position:relative
+               en inline sur les enfants de #home, ce qui decalerait la legende. */
+            position: absolute !important;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .home-video-mobile iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 0;
+        }
+        /* Ecran plus large que le 16/9 : on remplit la largeur, on rogne la hauteur */
+        @media (min-aspect-ratio: 16/9) {
+            .home-video-mobile iframe {
+                width: 100vw;
+                height: 56.25vw;
+            }
+        }
+        /* Ecran plus etroit que le 16/9 (telephone) : on remplit la hauteur, on rogne les cotes */
+        @media (max-aspect-ratio: 16/9) {
+            .home-video-mobile iframe {
+                width: 177.78vh;
+                height: 100vh;
+            }
+        }
     </style>
     <div id="bgndVideo" class="video-player"
          data-property="{videoURL:'https://vimeo.com/243136203',containment:'#home',autoPlay:true, mute:true, showYTLogo: false, optimizeDisplay: true, ratio: 16/9, showControls: false, startAt:0, opacity:1}">
+    </div>
+    <div class="home-video-mobile" aria-hidden="true">
+        <iframe src="https://player.vimeo.com/video/243136203?background=1&amp;autoplay=1&amp;muted=1&amp;loop=1&amp;playsinline=1&amp;dnt=1"
+                title="Video de fond"
+                allow="autoplay; fullscreen"
+                frameborder="0"></iframe>
     </div>
     <div class="titan-caption">
         <div class="caption-content">
