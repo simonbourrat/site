@@ -344,6 +344,13 @@
             $(".video-player").vimeo_player();
             // fullscreeneo.init();
             // fullscreeneo.sizeEverything();
+
+            /* mb.vimeo_player n'insere pas son iframe sur mobile.
+               On affiche alors le lecteur "background" present dans index.html
+               (muet, en boucle, playsinline), cadré en cover par le CSS. */
+            if (jQuery.browser && jQuery.browser.mobile) {
+                jQuery("#home").addClass("home-video-on");
+            }
         });
 
         /* ---------------------------------------------- /*
