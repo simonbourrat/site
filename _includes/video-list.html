@@ -28,8 +28,8 @@
                              loading="lazy"
                              onerror="this.onerror=null;this.src='{{ thumb_remote }}';">
                         <span class="sb-video-play"><i class="fa fa-play"></i></span>
-                        <div class="sb-video-overlay">
-                            <h3>{{ video.titre }}</h3>
+                        <div class="sb-video-overlay{% if video.hide_title == true %} sb-video-overlay--subtitle-only{% endif %}">
+                            {% unless video.hide_title == true %}<h3>{{ video.titre }}</h3>{% endunless %}
                             {% assign desc = video.description | strip %}
                             {% if desc and desc != "" %}<p>{{ desc }}</p>{% endif %}
                         </div>
