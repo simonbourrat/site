@@ -226,7 +226,20 @@
          /* ---------------------------------------------- */
 
         $('.video-pop-up').magnificPopup({
-            type: 'iframe'
+            type: 'iframe',
+            iframe: {
+                patterns: {
+                    /* Le pattern Vimeo d'origine ajoute toujours "?autoplay=1",
+                       ce qui casse les URLs qui portent deja une query (?h=...
+                       pour les videos non listees). Nos URLs sources incluent
+                       deja leurs parametres, on ne rajoute donc rien ici. */
+                    vimeo: {
+                        index: 'vimeo.com/',
+                        id: '/',
+                        src: '//player.vimeo.com/video/%id%'
+                    }
+                }
+            }
         });
 
         $(".gallery-item").magnificPopup({

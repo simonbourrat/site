@@ -18,6 +18,11 @@
                 {% else %}
                     {% assign thumb_remote = "https://vumbnail.com/" | append: video.id | append: ".jpg" %}
                     {% assign watch = "https://vimeo.com/" | append: video.id %}
+                    {% assign lightbox = watch | append: "?autoplay=1" %}
+                    {% if video.hash and video.hash != "" %}
+                        {% assign watch = watch | append: "?h=" | append: video.hash %}
+                        {% assign lightbox = "https://vimeo.com/" | append: video.id | append: "?h=" | append: video.hash | append: "&autoplay=1" %}
+                    {% endif %}
                 {% endif %}
                 <div class="sb-video-item">
                     <a href="{{ watch }}" class="video-pop-up"{% if lightbox != "" %} data-mfp-src="{{ lightbox }}"{% endif %} aria-label="{{ video.titre | escape }}">
