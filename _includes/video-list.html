@@ -1,3 +1,4 @@
+{% assign t = site.data.i18n[page.lang] | default: site.data.i18n.fr %}
 <section class="module-extra-small">
     <div class="container">
         <div class="row">
@@ -36,6 +37,8 @@
                         <div class="sb-video-overlay{% if video.hide_title == true %} sb-video-overlay--subtitle-only{% endif %}">
                             {% unless video.hide_title == true %}<h3>{{ video.titre }}</h3>{% endunless %}
                             {% assign desc = video.description | strip %}
+                            {% comment %}Seule l'etiquette generique est traduite ; les titres de films et noms propres restent tels quels.{% endcomment %}
+                            {% if page.lang == 'en' and desc == 'Réalisation' %}{% assign desc = t.video_category %}{% endif %}
                             {% if desc and desc != "" %}<p>{{ desc }}</p>{% endif %}
                         </div>
                     </a>

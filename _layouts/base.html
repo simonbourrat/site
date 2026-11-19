@@ -1,12 +1,16 @@
+{% assign t = site.data.i18n[page.lang] | default: site.data.i18n.fr %}
 <!DOCTYPE html>
-<html lang="fr-FR" dir="ltr">
+<html lang="{% if page.lang == 'en' %}en{% else %}fr-FR{% endif %}" dir="ltr">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Les pages anglaises sont dans /en/ : sans cette base, les chemins
+         relatifs (assets/...) seraient resolus depuis /en/ et casseraient. -->
+    <base href="/">
 
     <title>{{ page.title }}</title>
-    <meta name="description" content="{{ site.description }}">
+    <meta name="description" content="{{ page.description | default: site.description }}">
 
     <link rel="icon" href="favicon.ico">
     {% include stylesheets.html %}
@@ -17,22 +21,22 @@
 <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
 <main>
     <div class="page-loader">
-        <div class="loader">Chargement ...</div>
+        <div class="loader">{{ t.loading }}</div>
     </div>
     {% unless page.hidenav == true %}
     <nav class="navbar navbar-custom navbar-fixed-top {{ navbar-additional-classes }}">
         <div class="container">
             <div class="navbar-header">
                 <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span
-                        class="sr-only">Afficher/masquer menu</span><span class="icon-bar"></span><span
+                        class="sr-only">{{ t.menu_toggle }}</span><span class="icon-bar"></span><span
                         class="icon-bar"></span><span class="icon-bar"></span></button>
-                <a class="navbar-brand d-flex" href="index.html">
+                <a class="navbar-brand d-flex" href="{{ t.home_url }}">
                     <div style="padding-right: 1rem;">
                         <img src="assets/images/logo/Logo-simon-blanc.svg"/>
                     </div>
                     <div>
                         <h1>Simon Bourrat</h1>
-                        <h2>Opérateur de prise de vue</h2>
+                        <h2>{{ t.brand_subtitle }}</h2>
                     </div>
                 </a>
             </div>
@@ -61,6 +65,7 @@
     </div>
 </footer>
 {% endunless %}
+{% include language-switch.html %}
 {% include javascript.html %}
 {% include analytics.html %}
 </body>

@@ -1,8 +1,9 @@
+{% assign t = site.data.i18n[page.lang] | default: site.data.i18n.fr %}
 <ul class="nav navbar-nav navbar-right">
-    <li><a href="/realisation">Réalisation</a></li>
-    <li><a href="/drone">OPV / Drone</a></li>
-    <li><a href="/etalonnage">Étalonnage</a></li>
-    <li><a href="/photographie">Photographie</a></li>
-    <!--<li><a href="/actu">Actu</a></li>-->
-    <li><a href="/contact">Contact</a></li>
+    <li><a href="{{ t.prefix }}/realisation">{{ t.nav_realisation }}</a></li>
+    <li><a href="{{ t.prefix }}/drone">{{ t.nav_drone }}</a></li>
+    <li><a href="{{ t.prefix }}/etalonnage">{{ t.nav_etalonnage }}</a></li>
+    <li><a href="{{ t.prefix }}/photographie">{{ t.nav_photographie }}</a></li>
+    <!--<li><a href="{{ t.prefix }}/actu">Actu</a></li>-->
+    <li><a href="{{ t.prefix }}/contact">{{ t.nav_contact }}</a></li>
 </ul>
