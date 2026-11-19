@@ -1,26 +1,7 @@
 ---
 layout: page
+lang: fr
+switch_url: /en/photographie
+switch_label: EN
 ---
-<section class="module-extra-small" id="services">
-    <div class="container" id="services-s">
-        <div class="row">
-            <div class="col-xs-12">
-                <div class="post-masonry">
-                    {% comment %}
-                        L'ordre et la selection sont definis dans _data/galerie.yml.
-                        Un fichier present sur le disque mais absent de cette liste
-                        reste disponible localement sans etre publie sur le site.
-                    {% endcomment %}
-                    {% for image in site.data.galerie %}
-                        <div class="col-xs-6 gallery-item">
-                            <div class="gallery-image"><a class="gallery" href="{{ site.baseurl }}/assets/images/gallery/{{ image }}.jpg"><img src="{{ site.baseurl }}/assets/images/thumb/{{ image }}.jpg" />
-                                <div class="gallery-caption">
-                                    <div class="gallery-icon"><span class="icon-magnifying-glass"></span></div>
-                                </div></a></div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+{% include gallery-content.html %}
